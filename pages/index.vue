@@ -1,5 +1,5 @@
 <template>
-    <div>
-        <ProdutoGaleria></ProdutoGaleria>
+    <div class="container">
+        <ProdutoGaleria category="cat"></ProdutoGaleria>
     </div>
 </template>

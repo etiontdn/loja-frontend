@@ -1,5 +1,12 @@
+<script setup>
+async function navigate(option) {
+    await navigateTo("/produtos/" + option);
+}
+</script>
+
 <template>
-    <div>
-        {{ $route.params.categoria }}
+    <div class="container">
+        <ProdutoSeletorCategoria @categoria-selecionada="(option) => navigate(option)"></ProdutoSeletorCategoria>
+        <ProdutoGaleria :category="$route.params.categoria"></ProdutoGaleria>
     </div>
 </template>

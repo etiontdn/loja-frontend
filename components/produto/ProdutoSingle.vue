@@ -3,12 +3,12 @@ const props = defineProps({
     img: String,
     nome: String,
     descricao: String,
-    preco: Number,
+    preco: String,
 });
 
 const descricaoComprimida = computed(() => {
-    if (props.descricao.length > 159) {
-        return props.descricao.substring(0, 159) + "...";
+    if (props.descricao.length > 120) {
+        return props.descricao.substring(0, 117) + "...";
     }
     return props.descricao;
 });
@@ -54,7 +54,7 @@ const descricaoComprimida = computed(() => {
     max-width: 180px;
 
     @media @md {
-        max-width: 460px;
+        max-width: 100%;
     }
 
     width: 100%;
@@ -65,7 +65,7 @@ const descricaoComprimida = computed(() => {
     height: auto;
 
     margin: auto;
-    aspect-ratio: 1/1;
+    aspect-ratio: 3/4;
     object-fit: cover;
 }
 
@@ -76,6 +76,7 @@ const descricaoComprimida = computed(() => {
 
     .produto-nome {
         .titulo();
+        font-size: 1.5rem;
     }
 
     .produto-descricao {

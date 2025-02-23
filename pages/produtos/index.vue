@@ -1,5 +1,12 @@
+<script setup>
+async function navigate(option) {
+    await navigateTo("/produtos/" + option);
+}
+</script>
+
 <template>
-    <div>
-        página de produtos
+    <div class="container">
+        <ProdutoSeletorCategoria @categoria-selecionada="(option) => navigate(option)"></ProdutoSeletorCategoria>
+        <ProdutoGaleria category="cat"></ProdutoGaleria>
     </div>
 </template>
