@@ -1,4 +1,5 @@
 @import (css) url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import "media.less";
 
 @text-dark-grey: #333;
 @text-grey: #5A5A5A;
@@ -21,28 +22,33 @@
 }
 
 html {
-    font-size: 12px;
+    font-size: 10px;
+    
+    @media @md {
+        font-size: 12px;
+    }
 }
 
 .texto {
     .roboto-regular();
-    font-size: 16px;
+    font-size: 1.333rem;
     line-height: 1.5;
     color: @text-grey;
 }
 
 .titulo {
     .roboto-bold();
-    font-size: 24px;
+    font-size: 2rem;
     line-height: 1.5;
-    letter-spacing: 0.2em;
+    letter-spacing: -0.005em;
+    text-transform: uppercase;
     color: @text-grey;  
 }
 
 .subtitulo {
     .roboto-light();
-    font-size: 20px;
+    font-size: 1.666rem;
     line-height: 1.5;
     color: @text-light-grey;
-    letter-spacing: 0.3em;
+    letter-spacing: 0.02em;
 }

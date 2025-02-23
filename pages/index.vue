@@ -1,5 +1,5 @@
 <template>
     <div>
-        Inicio
+        <ProdutoGaleria></ProdutoGaleria>
     </div>
 </template>
