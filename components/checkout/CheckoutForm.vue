@@ -17,60 +17,69 @@
         <CheckoutInputTexto
             label="Rua"
             nome="rua"
-            placeholder=""
+            placeholder="Rua Exemplo"
         ></CheckoutInputTexto>
         <div class="col-1-2">
             <CheckoutInputTexto
                 label="Numero"
                 nome="numero"
-                placeholder=""
+                placeholder="52"
             ></CheckoutInputTexto>
             <CheckoutInputTexto
                 label="Bairro"
                 nome="bairro"
-                placeholder=""
+                placeholder="Bairro Exemplo"
             ></CheckoutInputTexto>
         </div>
         <div class="col-2-1">
             <CheckoutInputTexto
                 label="Cidade"
                 nome="cidade"
-                placeholder=""
+                placeholder="Rio de Janeiro"
             ></CheckoutInputTexto>
             <CheckoutInputTexto
                 label="Estado"
                 nome="estado"
-                placeholder=""
+                placeholder="Rio de Janeiro"
             ></CheckoutInputTexto>
         </div>
         <h2 class="subtitulo">Informações de Pagamento</h2>
         <CheckoutInputTexto
             label="Numero do Cartão"
             nome="num-card"
-            placeholder=""
+            placeholder="0000 0000 0000 0000"
         ></CheckoutInputTexto>
         <CheckoutInputTexto
             label="Titular do Cartão"
             nome="titular-card"
-            placeholder=""
+            placeholder="João da Silva"
         ></CheckoutInputTexto>
         <div class="col-2-1">
             <CheckoutInputTexto
                 label="Data de Vencimento"
                 nome="data-card"
-                placeholder=""
+                placeholder="02/25"
             ></CheckoutInputTexto>
             <CheckoutInputTexto
                 label="CVC"
                 nome="cvc-card"
-                placeholder=""
+                placeholder="1111"
             ></CheckoutInputTexto>
+        </div>
+        <div class="botoes">
+        <CheckoutInputBotao></CheckoutInputBotao>
         </div>
     </div>
 </template>
 <style lang="less">
 .checkout-form {
     padding: 1rem;
+}
+
+.botoes {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 .col-1-2 {
@@ -83,6 +92,11 @@
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 1rem;
+}
+
+.input-botao {
+    margin-top: 1rem;
+    flex: 0 0 auto;
 }
 
 </style>

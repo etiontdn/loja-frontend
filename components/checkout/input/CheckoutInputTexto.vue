@@ -17,6 +17,7 @@ const props = defineProps(["nome", "label", "placeholder"])
     .subtitulo();
     font-size: 1.15rem;
     margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
 }
 
 .checkout-input {
@@ -30,6 +31,5 @@ const props = defineProps(["nome", "label", "placeholder"])
     border-radius: 0.2rem;
     .texto();
     font-size: 1.1rem;
-    margin-bottom: 0.5rem;
 }
 </style>
