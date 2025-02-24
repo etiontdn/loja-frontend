@@ -1,11 +1,13 @@
 <script setup>
 const props = defineProps(["nome", "label", "placeholder"])
+const model = defineModel()
+
 </script>
 
 <template>
     <div class="checkout-input">
         <label class="label" :for="nome">{{ label }}</label>
-        <input class="input" type="text" :name="nome" :id="nome" :placeholder="placeholder">
+        <input required v-model="model" class="input" type="text" :name="nome" :id="nome" :placeholder="placeholder">
     </div>
 </template>
 

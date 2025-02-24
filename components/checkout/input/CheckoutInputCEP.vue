@@ -1,21 +1,31 @@
 <script setup>
 import cep from 'cep-promise';
-const emit = defineEmits(['cep']);
-const cepInput = ref("")
-
-const HandleClick = () => {
+const emit = defineEmits(['cep', 'change']);
+const loading = ref(false);
+const model = defineModel()
+const HandleClick = async () => {
     if (!ValidateCEP.value) {
         return;
     }
-    cep(cepInput.value).then((response) => {
+    loading.value = true;
+    // Apenas para demonstrar o icone de loading
+    await new Promise((r) => setTimeout(r, 1000));
+    cep(model.value).then((response) => {
         emit('cep', response);
+        loading.value = false;
     });
 }
 
 const ValidateCEP = computed(() => {
     const regex = /^[0-9]{8}$/;
-    return regex.test(cepInput.value);
+    return regex.test(model.value);
 });
+
+const change = () => {
+    emit('change', valor);
+}
+
+const valor = ref('');
 
 </script>
 
@@ -24,14 +34,15 @@ const ValidateCEP = computed(() => {
         <label class="label" for="cep">CEP</label>
         <div class="button-row">
             <input
-                v-model="cepInput"
+                v-model="model"
                 class="input"
                 type="text"
                 id="cep"
                 placeholder="00000000"
             />
-            <button class="botao">
-                <CheckoutInputCEPIcon @click="HandleClick"></CheckoutInputCEPIcon>
+            <button type="button" class="botao">
+                <CheckoutInputCEPIcon v-if="!loading" @change="change" v-model="valor" @click="HandleClick"></CheckoutInputCEPIcon>
+                <CheckoutInputLoading v-else></CheckoutInputLoading>
             </button>
         </div>
     </div>
